@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Calculator</title>
+    <link rel="stylesheet" href='static\styles.css'>
+</head>
+<body>
+    <div id="welcome-dialog" class="dialog">
+        <div class="dialog-content">
+            <label for="user-name">Enter your name:</label>
+            <input type="text" id="user-name" required>
+            <button onclick="welcomeUser()">Submit</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <img src="https://yt3.googleusercontent.com/cgEbNdU0nWcw7AOuNaDhARzDaLr7AyftvT-M17waHN7BfdEwmsqNOoyEfE2iPPLGwfdcxMfSdQ=s900-c-k-c0x00ffffff-no-rj" alt="OOU Logo">
+        </div>
+
+        <div class="title">
+            <h1>GPA CALCULATOR</h1>
+            <h6>By DANAKIN</h6>
+        </div>
+
+        <form id="gpaForm" method="POST" action="/calculate">
+            <div class="form-group">
+                <label for="name">NAME:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="department">DEPARTMENT:</label>
+                <input type="text" id="department" name="department" required>
+            </div>
+            <div class="form-group">
+                <label for="level">LEVEL:</label>
+                <input type="text" id="level" name="level" required>
+            </div>
+            <div class="form-group">
+                <label for="courses">NO OF COURSES:</label>
+                <input type="number" id="courses" name="courses" min="1" required>
+            </div>
+            <div id="courseFields"></div>
+            <div class="form-group">
+                <button type="button" onclick="generateCourseFields()">Generate Course Fields</button>
+            </div>
+            <div class="form-group">
+                <button type="submit">Calculate GPA</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="footer">
+        <img src="https://media.licdn.com/dms/image/D4D03AQHNOw0Ua4rj_A/profile-displayphoto-shrink_200_200/0/1714930022637?e=2147483647&v=beta&t=gkUzZn-dvZZjI7022_DE10FOzaJCW5gKveCiUQL3MV4" alt="Daniel Akinwande">
+        <p>Daniel Akinwande</p>
+    </div>
+
+    <div class="floating-text">
+        <span>Engineering</span>
+    </div>
+
+    <script>
+        function welcomeUser() {
+            const userName = document.getElementById('user-name').value;
+            if (userName) {
+                alert(`Hey ${userName}, welcome!`);
+                document.getElementById('welcome-dialog').style.display = 'none';
+            }
+        }
+
+        function generateCourseFields() {
+            const numberOfCourses = document.getElementById('courses').value;
+            const courseFields = document.getElementById('courseFields');
+            courseFields.innerHTML = '';
+            for (let i = 1; i <= numberOfCourses; i++) {
+                courseFields.innerHTML += `
+                    <div class="course-row">
+                        <div class="form-group">
+                            <label for="course${i}_code">Course ${i} Code</label>
+                            <input type="text" id="course${i}_code" name="course${i}_code" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="course${i}_score">Course ${i} Score</label>
+                            <input type="number" id="course${i}_score" name="course${i}_score" min="0" max="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="course${i}_units">Course ${i} Units</label>
+                            <input type="number" id="course${i}_units" name="course${i}_units" min="1" required>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

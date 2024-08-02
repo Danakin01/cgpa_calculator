@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Calibri', sans-serif;
+    background: url('https://yt3.googleusercontent.com/cgEbNdU0nWcw7AOuNaDhARzDaLr7AyftvT-M17waHN7BfdEwmsqNOoyEfE2iPPLGwfdcxMfSdQ=s900-c-k-c0x00ffffff-no-rj') repeat;
+    background-color: rgba(255, 255, 255, 0.826);
+    background-size: 400px;
+    background-blend-mode: darken;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+body:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    background-blend-mode: overlay;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 800px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header img {
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    animation: rotateIn 10s;
+}
+
+.title h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #333;
+    animation: fadeIn 2s;
+    margin-bottom: 10px;
+}
+
+.title h6 {
+    text-align: center;
+    font-size: 1.2em;
+    color: #555;
+    animation: fadeIn 3s;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+    animation: slideIn 1s ease-in-out;
+}
+
+.form-group input, .form-group button {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    animation: fadeIn 1.5s;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+}
+
+.form-group button {
+    background-color: #007bff;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s;
+}
+
+.form-group button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.course-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.course-row .form-group {
+    flex: 1;
+    margin: 5px;
+}
+
+.footer {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+}
+
+.footer img {
+    width: 50px;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.footer img:hover {
+    transform: rotate(360deg);
+}
+
+.footer p {
+    text-align: center;
+    margin: 5px 0;
+    color: #333;
+}
+
+.result {
+    text-align: center;
+    font-size: 2.5em;
+    color: #333;
+    animation: fadeIn 2s;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.result .container {
+    background: rgba(255, 255, 255, 0.705);
+    padding: 40px;
+    border-radius: 15px;
+    border-style: double;
+    border-width: 30px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 80%;
+    max-width: 600px;
+    text-align: center;
+    align-content: center;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    border-style: double;
+}
+
+.dialog-content {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 1);
+    backdrop-filter: blur(10px);
+    border: 3px solid rgba(0, 0, 0, 0.721);
+    animation: slideInUp 3s ease-in-out;
+}
+
+.dialog-content input {
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 4px;
+    border: 1px solid #372cdc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dialog-content input:hover {
+    background: linear-gradient(135deg, #ffffff, #f2f2f2);
+}  
+
+.dialog-content button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #372cdc, #372cdc);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.3s;
+}
+
+.dialog-content button:hover {
+    background: linear-gradient(135deg, #218838, #45a049);
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes rotateIn {
+    from {
+        transform: rotate(-360deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotate(0);
+        opacity: 1;
+    }
+}
