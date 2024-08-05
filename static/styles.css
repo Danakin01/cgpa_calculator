@@ -263,3 +263,65 @@ body:hover {
         opacity: 1;
     }
 }
+
+
+/* Mobile Design */
+@media only screen and (max-width: 768px) {
+    body {
+      font-size: 16px;
+    }
+  
+    .container {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    .header img {
+      width: 50px;
+    }
+  
+    .title h1 {
+      font-size: 1.8em;
+    }
+  
+    .title h6 {
+      font-size: 1em;
+    }
+  
+    .form-group input, .form-group button {
+      padding: 10px;
+    }
+  
+    .course-row {
+      flex-direction: column;
+    }
+  
+    .course-row .form-group {
+      margin: 10px 0;
+    }
+  
+    .footer {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer img {
+      width: 30px;
+    }
+  
+    .result .container {
+      padding: 20px;
+    }
+  
+    .dialog-content {
+      padding: 5px;
+    }
+  
+    .dialog-content input {
+      padding: 5px;
+    }
+  
+    .dialog-content button {
+      padding: 5px 10px;
+    }
+  }
